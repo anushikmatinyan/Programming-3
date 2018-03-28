@@ -50,6 +50,7 @@ class Eatgrass extends Mayrakan{
             for (var i in xotArr) {
                 if (x == xotArr[i].x && y == xotArr[i].y) {
                     xotArr.splice(i, 1);
+                    break;
                 }
             }
             if (this.multiply == 10) {
@@ -89,8 +90,10 @@ class Eatgrass extends Mayrakan{
         for (var i in eatArr) {
             if (this.x == eatArr[i].x && this.y == eatArr[i].y) {
                 eatArr.splice(i, 1);
+              break;
             }
         }
+         
     }
 
 }

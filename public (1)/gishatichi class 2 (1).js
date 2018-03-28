@@ -53,6 +53,7 @@ class Gishatich extends Mayrakan{
             for (var i in eatArr) {
                 if (x == eatArr[i].x && y == eatArr[i].y) {
                     eatArr.splice(i, 1);
+                    break;
                 }
             }
             if (this.multiply == 10) {
@@ -65,6 +66,7 @@ class Gishatich extends Mayrakan{
             this.energy--;
             if (this.energy < 3) {
                 this.die();
+                
                 //this.energy = 10;
             }
         }
@@ -92,8 +94,10 @@ class Gishatich extends Mayrakan{
         for (var i in gishatichArr) {
             if (this.x == gishatichArr[i].x && this.y == gishatichArr[i].y) {
                 gishatichArr.splice(i, 1);
+            break;
             }
         }
+            
     }
 }
 

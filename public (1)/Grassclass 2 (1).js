@@ -1,16 +1,11 @@
 //խոտի կլասը
-class Grass extends Mayrakan{
+class Grass extends Mayrakan {
     constructor(x, y, ind) {
         super(x, y, ind)
         this.energy = 5;
     }
 
-
-
-
-
-
-    mul() {
+      mul() {
         this.multiply++;
         if (this.multiply == 3) {
             var emptyCord = this.getDirections(0);
@@ -27,10 +22,11 @@ class Grass extends Mayrakan{
                 this.multiply = 0;
             }
         }
-    }
+
+     }
 
 
-
+    
 }
 
 

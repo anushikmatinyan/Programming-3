@@ -52,6 +52,8 @@ class Erkaker extends Mayrakan{
             for (var i in gishatichArr) {
                 if (x == gishatichArr[i].x && y == gishatichArr[i].y) {
                     gishatichArr.splice(i, 1);
+                     break;
+
                 }
             }
             if (this.multiply == 10) {
@@ -64,7 +66,7 @@ class Erkaker extends Mayrakan{
             this.energy--;
             if (this.energy < 3) {
                 this.die();
-
+               
                 var emptyCord = this.getDirections(1);
 
                 var cord = random(emptyCord);
@@ -126,6 +128,7 @@ class Erkaker extends Mayrakan{
         for (var i in erkakerArr) {
             if (this.x == erkakerArr[i].x && this.y == erkakerArr[i].y) {
                 erkakerArr.splice(i, 1);
+                break;
             }
         }
     }
