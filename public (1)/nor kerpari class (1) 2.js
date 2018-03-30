@@ -1,6 +1,5 @@
-
-//erkakeri klasy
-class Erkaker extends Mayrakan{
+//nor kerpari klasy
+class Norkerpar extends Mayrakan{
     constructor(x, y, ind) {
         super(x, y, ind)
         this.energy = 5;
@@ -16,7 +15,7 @@ class Erkaker extends Mayrakan{
             var x = cord[0];
             var y = cord[1];
 
-            matrix[y][x] = 4;
+            matrix[y][x] = 5;
 
             matrix[this.y][this.x] = 0;
 
@@ -42,7 +41,7 @@ class Erkaker extends Mayrakan{
             var x = cord[0];
             var y = cord[1];
 
-            matrix[y][x] = 4;
+            matrix[y][x] = 5;
             matrix[this.y][this.x] = 0;
 
             this.x = x;
@@ -77,7 +76,7 @@ class Erkaker extends Mayrakan{
                     var x = cord[0];
                     var y = cord[1];
 
-                    matrix[y][x] = 4;
+                    matrix[y][x] = 5;
                     matrix[this.y][this.x] = 0;
 
                     this.x = x;
@@ -115,19 +114,19 @@ class Erkaker extends Mayrakan{
 
             this.multiply++;
 
-            var norErkaker = new Erkaker(x, y, this.index);
-            gishatichArr.push(norErkaker);
+            var nornorkerpar = new Erkaker(x, y, this.index);
+            gishatichArr.push(nornorkerpar);
 
-            matrix[y][x] = 4;
+            matrix[y][x] = 5;
             this.multiply = 0;
         }
     }
 
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in erkakerArr) {
-            if (this.x == erkakerArr[i].x && this.y == erkakerArr[i].y) {
-                erkakerArr.splice(i, 1);
+        for (var i in norkerparArr) {
+            if (this.x == norkerparArr[i].x && this.y == norkerparArrr[i].y) {
+                norkerparArr.splice(i, 1);
                 break;
             }
         }

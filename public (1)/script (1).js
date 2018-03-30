@@ -4,6 +4,7 @@ var xotArr = [];
 var eatArr = [];
 var gishatichArr = [];
 var erkakerArr = [];
+var norkerparArr= [];
 
 
 var erk = 50;
@@ -12,6 +13,7 @@ var grasscount = 70;
 var eatcount = 70;
 var gishcount = 30;
 var erkakercount = 10;
+var norkerparcount = 5;
 var wheaterContenier;
 
 
@@ -63,6 +65,18 @@ function setup() {
             matrix[y][x] = 4;
             c++;
         }
+        
+  
+        
+    }
+     var c = 0;
+    while (c < norkerparcount) {
+        var x = Math.floor(random(0, erk));
+        var y = Math.floor(random(0, bar));
+        if (matrix[x][y] == 0) {
+            matrix[y][x] = 5;
+            c++;
+        }
   
         
     }
@@ -88,8 +102,10 @@ function setup() {
             } else if (matrix[i][j] == 4) {
                 var gishatich = new Erkaker(j, i, 4);
                 gishatichArr.push(gishatich);
+            } else if (matrix[i][j] == 4) {
+                var gishatich = new Norkerpar(j, i, 5);
+                gishatichArr.push(gishatich);
             }
-
         }
     }
     wheaterContenier = document.getElementById("wheater");
@@ -119,17 +135,21 @@ function draw() {
                 } else if (matrix[i][j] == 4) {
                     fill("#33BBFF");
                     ellipse(j * side + side / 2, i * side + side / 2, side, side);
+                }else if (matrix[i][j] == 5) {
+                    fill("#000099");
+                    ellipse(j * side + side / 2, i * side + side / 2, side, side);
                 }
             }
+            
         }
     }
     else if (f % 60 >= 25 && f % 60 <= 35) {
           wheaterContenier.innerHTML="Amar";
-        background('#acacac');
-        for (var i = 0; i < matrix.length; i++) {
+      background('#acacac');
+     for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 1) {
-                    fill("#55ff00");
+                    fill("#99ff66");
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 2) {
                     fill("orange");
@@ -143,18 +163,20 @@ function draw() {
                 } else if (matrix[i][j] == 4) {
                     fill("#33BBFF");
                     ellipse(j * side + side / 2, i * side + side / 2, side, side);
-                }
-
+                }  else if (matrix[i][j] ==5) {
+                    fill("#000099");
+                    ellipse(j * side + side / 2, i * side + side / 2, side, side);
+                }    
             }
         }
     }
     else if (f % 60 >= 30 && f % 60 <= 40) {
           wheaterContenier.innerHTML="Ashun";
-        background('#acacac');
-        for (var i = 0; i < matrix.length; i++) {
+          background('#acacac');
+     for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 1) {
-                    fill("#e68a00");
+                    fill("#ff9900");
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 2) {
                     fill("orange");
@@ -165,26 +187,26 @@ function draw() {
                 } else if (matrix[i][j] == 3) {
                     fill(255, 0, 0);
                     rect(j * side, i * side, side, side);
-                } else if (matrix[i][j] == 4) {
-                    fill("#33BBFF");
+                } else if (matrix[i][j] == 5) {
+                    fill("#000099");
                     ellipse(j * side + side / 2, i * side + side / 2, side, side);
                 }
 
             }
         }
     }
-    else if (f % 60 >= 45 && f % 60 <= 55) {
-             wheaterContenier.innerHTML="Dzmer";   
-        background('#acacac');
-        for (var i = 0; i < matrix.length; i++) {
+     else if (f % 60 >= 45 && f % 60 <= 55) {
+          wheaterContenier.innerHTML="Dzmer";
+       background('#acacac');
+     for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 1) {
-                    fill("#ccffff");
+                    fill("#66ffff");
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 2) {
                     fill("orange");
                     rect(j * side, i * side, side, side);
-                } else if (matrix[i][j] == 0) {
+                } else if (matrix[i][j] == 0) {f
                     fill('#acacac');
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 3) {
@@ -193,8 +215,10 @@ function draw() {
                 } else if (matrix[i][j] == 4) {
                     fill("#33BBFF");
                     ellipse(j * side + side / 2, i * side + side / 2, side, side);
+                }   else if (matrix[i][j] == 5) {
+                    fill("#000099");
+                    ellipse(j * side + side / 2, i * side + side / 2, side, side);
                 }
-
             }
         }
     }
@@ -216,5 +240,11 @@ function draw() {
         }
 
     }
-}
+     if (norkerparArr.length > 60) {
+        for (var i in norkerparArr) {
+            norkerparArr[i].eat();
+        }
 
+    }
+
+}
